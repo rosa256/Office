@@ -4,7 +4,10 @@ import com.myoffice.office.models.Employee;
 import com.myoffice.office.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class EmployeeController {
@@ -22,10 +25,12 @@ public class EmployeeController {
     }
 
     @GetMapping("/employees")
-    public String getEmployee(){
-        StringBuilder employees = new StringBuilder();
-        for (Employee e: employeeService.getEmployeesList())
-            employees.append(e.toString()).append(" <br>");
-        return employees.toString();
+    public List<Employee> getEmployees(){
+        return employeeService.getAllEmployees();
+    }
+
+    @GetMapping("/employees/{id}")
+    public Employee getEmployee(@PathVariable Integer id){
+        return employeeService.getEmployee(id);
     }
 }

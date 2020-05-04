@@ -1,21 +1,29 @@
 package com.myoffice.office.services;
 
 import com.myoffice.office.models.Employee;
+import com.myoffice.office.repositories.EmployeeRepository;
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Data
 @Service
 public class EmployeeService {
-    private List<Employee> employeesList;
 
-    public EmployeeService() {
-        this.employeesList = new ArrayList<>();
-        employeesList.add(new Employee(1,"Nazwisko1","SPRZEDAWCA", new Date(),300f,1000f,1));
+    private EmployeeRepository employeeRepository;
+
+    @Autowired
+    public EmployeeService(EmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
+    }
+
+    public List<Employee> getAllEmployees(){
+        return (List<Employee>) employeeRepository.findAll();
+    }
+
+    public Employee getEmployee(Integer id){
+        return employeeRepository.findById(id).get();
     }
 }

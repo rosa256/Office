@@ -1,25 +1,28 @@
 package com.myoffice.office.models;
 
+import lombok.Getter;
+import org.springframework.stereotype.Service;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 
+@Entity
+@Getter
+@Service
 public class Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id_pracownika;
+    private Integer id_kierownika;
     private String nazwisko;
     private String stanowisko;
     private Date data_zatrudnienia;
     private Float pensja;
     private Float premia;
-    private Integer nr_departamentu;
-
-    public Employee(Integer id_pracownika, String nazwisko, String stanowisko, Date data_zatrudnienia, Float pensja, Float premia, Integer nr_departamentu) {
-        this.id_pracownika = id_pracownika;
-        this.nazwisko = nazwisko;
-        this.stanowisko = stanowisko;
-        this.data_zatrudnienia = data_zatrudnienia;
-        this.pensja = pensja;
-        this.premia = premia;
-        this.nr_departamentu = nr_departamentu;
-    }
+    private Integer nr_dep;
 
     @Override
     public String toString() {
@@ -30,7 +33,7 @@ public class Employee {
                 ", data_zatrudnienia=" + data_zatrudnienia +
                 ", pensja=" + pensja +
                 ", premia=" + premia +
-                ", nr_departamentu=" + nr_departamentu +
+                ", nr_departamentu=" + nr_dep +
                 '}';
     }
 }
