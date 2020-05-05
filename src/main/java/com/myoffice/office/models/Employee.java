@@ -3,10 +3,7 @@ package com.myoffice.office.models;
 import lombok.Getter;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -22,7 +19,10 @@ public class Employee {
     private Date data_zatrudnienia;
     private Float pensja;
     private Float premia;
-    private Integer nr_dep;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "nr_departamentu")
+    private Department department;
 
     @Override
     public String toString() {
@@ -33,7 +33,6 @@ public class Employee {
                 ", data_zatrudnienia=" + data_zatrudnienia +
                 ", pensja=" + pensja +
                 ", premia=" + premia +
-                ", nr_departamentu=" + nr_dep +
                 '}';
     }
 }

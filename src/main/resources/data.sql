@@ -5,33 +5,33 @@ INSERT INTO department (nr_departamentu, nazwa, lokalizacja) VALUES (3, 'Departa
 INSERT INTO department (nr_departamentu, nazwa, lokalizacja) VALUES (4, 'Departament 4', 'Warszawa');
 INSERT INTO department (nr_departamentu, nazwa, lokalizacja) VALUES (5, 'Departament 5', 'Gdansk');
 --
-INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_dep)
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
     VALUES (1, 'Nazwisko1','SPRZEDAWCA',3,to_date('1980/12/17','YYYY/MM/DD'),1000,300,1);
-INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_dep)
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
     VALUES (2, 'Nazwisko2','SPRZEDAWCA',1,to_date('1981/02/20','YYYY/MM/DD'),900,0,1);
-INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_dep)
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
     VALUES (3, 'Nazwisko3','ANALITYK',4,to_date('1981/02/22','YYYY/MM/DD'),1500,NULL,2);
-INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_dep)
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
     VALUES (4, 'Nazwisko4','ANALITYK',6,to_date('1981/04/02','YYYY/MM/DD'),2000,NULL,2);
-INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_dep)
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
     VALUES (5, 'Nazwisko5','KSIEGOWY',6,to_date('1981/09/28','YYYY/MM/DD'),3000,NULL,3);
-INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_dep)
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
     VALUES (6, 'Nazwisko6','KSIEGOWY',10,to_date('1981/05/01','YYYY/MM/DD'),4000,NULL,3);
-INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_dep)
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
     VALUES (7, 'Nazwisko7','KSIEGOWY',6,to_date('1981/06/09','YYYY/MM/DD'),3500,NULL,3);
-INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_dep)
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
     VALUES (8, 'Nazwisko8','PRZEDSTAWICIEL',9,to_date('1987/04/19','YYYY/MM/DD'),1200,400,1);
-INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_dep)
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
     VALUES (9, 'Nazwisko9','PRZEDSTAWICIEL',10,to_date('1981/11/17','YYYY/MM/DD'),1400,500,1);
-INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_dep)
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
     VALUES (10, 'Nazwisko10','PREZES',NULL,to_date('1981/09/08','YYYY/MM/DD'),5000,2000,4);
-INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_dep)
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
     VALUES (11, 'Nazwisko11','INFORMATYK',12,to_date('1987/05/23','YYYY/MM/DD'),3500,NULL,2);
-INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_dep)
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
     VALUES (12, 'Nazwisko12','INFORMATYK',10,to_date('1981/12/03','YYYY/MM/DD'),4000,NULL,2);
-INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_dep)
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
     VALUES (13, 'Nazwisko13','ANALITYK',6,to_date('1981/12/03','YYYY/MM/DD'),2000,NULL,2);
-INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_dep)
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
     VALUES (14, 'Nazwisko14','SPRZEDAWCA',1,to_date('1982/01/23','YYYY/MM/DD'),1000,400,1);
 --
 --INSERT INTO poziom_zarobkow (dolna_granica, gorna_granica)

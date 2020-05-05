@@ -16,7 +16,6 @@ public class Department {
     private String nazwa;
     private String lokalizacja;
 
-    @OneToMany
-    @JoinColumn(name = "nr_dep")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "department")
     private List<Employee> employees;
 }
