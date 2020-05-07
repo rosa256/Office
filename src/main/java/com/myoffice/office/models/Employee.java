@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
@@ -23,6 +24,9 @@ public class Employee {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "nr_departamentu")
     private Department department;
+
+    @OneToMany(mappedBy = "employee")
+    private List<Task> taskList;
 
     @Override
     public String toString() {
