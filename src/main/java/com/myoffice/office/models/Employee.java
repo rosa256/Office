@@ -1,7 +1,9 @@
 package com.myoffice.office.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
-import org.springframework.stereotype.Service;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -9,8 +11,8 @@ import java.util.List;
 
 @Entity
 @Getter
-@Service
-public class Employee {
+@Setter
+public class Employee{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id_pracownika;
@@ -23,9 +25,11 @@ public class Employee {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "nr_departamentu")
+    @JsonBackReference
     private Department department;
 
     @OneToMany(mappedBy = "employee")
+    @JsonManagedReference
     private List<Task> taskList;
 
     @Override

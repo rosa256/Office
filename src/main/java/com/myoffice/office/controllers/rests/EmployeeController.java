@@ -1,4 +1,4 @@
-package com.myoffice.office.controllers;
+package com.myoffice.office.controllers.rests;
 
 import com.myoffice.office.models.Employee;
 import com.myoffice.office.services.EmployeeService;

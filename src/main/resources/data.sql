@@ -34,32 +34,41 @@ INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_z
 INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
     VALUES (14, 'Nazwisko14','SPRZEDAWCA',1,to_date('1982/01/23','YYYY/MM/DD'),1000,400,1);
 --
---INSERT INTO poziom_zarobkow (dolna_granica, gorna_granica)
---    VALUES (700,1200);
---INSERT INTO poziom_zarobkow (dolna_granica, gorna_granica)
---    VALUES (1201,1400);
---INSERT INTO poziom_zarobkow (dolna_granica, gorna_granica)
---    VALUES (1401,2000);
---INSERT INTO poziom_zarobkow (dolna_granica, gorna_granica)
---    VALUES (2001,3000);
---INSERT INTO poziom_zarobkow (dolna_granica, gorna_granica)
---    VALUES (3001,9999);
+INSERT INTO Earnings_level (nr_przedzialu, dolna_granica, gorna_granica)
+    VALUES (1,700,1200);
+INSERT INTO Earnings_level (nr_przedzialu, dolna_granica, gorna_granica)
+    VALUES (2,1201,1400);
+INSERT INTO Earnings_level (nr_przedzialu, dolna_granica, gorna_granica)
+    VALUES (3,1401,2000);
+INSERT INTO Earnings_level (nr_przedzialu, dolna_granica, gorna_granica)
+    VALUES (4,2001,3000);
+INSERT INTO Earnings_level (nr_przedzialu, dolna_granica, gorna_granica)
+    VALUES (5,3001,9999);
 --
---INSERT INTO projekt (nazwa, budzet,data_rozpoczecia,data_zakonczenia)
---    VALUES('PROJEKT NR 1',2000,to_date('1981/02/02','YYYY/MM/DD'),to_date('1981/03/02','YYYY/MM/DD'));
---INSERT INTO projekt (nazwa,budzet,data_rozpoczecia,data_zakonczenia)
---    VALUES('PROJEKT NR 2',4000,to_date('1982/02/07','YYYY/MM/DD'),to_date('1982/03/01','YYYY/MM/DD'));
---INSERT INTO projekt (nazwa,budzet,data_rozpoczecia,data_zakonczenia)
---    VALUES('PROJEKT NR 3',2500,to_date('1983/04/05','YYYY/MM/DD'),to_date('1983/05/23','YYYY/MM/DD'));
---INSERT INTO projekt (nazwa,budzet,data_rozpoczecia,data_zakonczenia)
---    VALUES('PROJEKT NR 4',2000,to_date('1983/04/01','YYYY/MM/DD'),to_date('1983/04/19','YYYY/MM/DD'));
+INSERT INTO project (nr_projektu, nazwa, budzet,data_rozpoczecia,data_zakonczenia)
+    VALUES(1,'PROJEKT NR 1',2000,to_date('1981/02/02','YYYY/MM/DD'),to_date('1981/03/02','YYYY/MM/DD'));
+INSERT INTO project (nr_projektu, nazwa,budzet,data_rozpoczecia,data_zakonczenia)
+    VALUES(2,'PROJEKT NR 2',4000,to_date('1982/02/07','YYYY/MM/DD'),to_date('1982/03/01','YYYY/MM/DD'));
+INSERT INTO project (nr_projektu, nazwa,budzet,data_rozpoczecia,data_zakonczenia)
+    VALUES(3,'PROJEKT NR 3',2500,to_date('1983/04/05','YYYY/MM/DD'),to_date('1983/05/23','YYYY/MM/DD'));
+INSERT INTO project (nr_projektu, nazwa,budzet,data_rozpoczecia,data_zakonczenia)
+    VALUES(4,'PROJEKT NR 4',2000,to_date('1983/04/01','YYYY/MM/DD'),to_date('1983/04/19','YYYY/MM/DD'));
 --
---INSERT INTO zlecenie VALUES (3,1,10,40,to_date('1981/02/02','YYYY/MM/DD'),to_date('1981/02/12','YYYY/MM/DD'));
---INSERT INTO zlecenie VALUES (5,1,20,60,to_date('1981/02/20','YYYY/MM/DD'),to_date('1981/03/02','YYYY/MM/DD'));
---INSERT INTO zlecenie VALUES (11,2,20,50,to_date('1982/02/07','YYYY/MM/DD'),to_date('1982/03/16','YYYY/MM/DD'));
---INSERT INTO zlecenie VALUES (12,2,30,45,to_date('1982/02/17','YYYY/MM/DD'),to_date('1982/02/20','YYYY/MM/DD'));
---INSERT INTO zlecenie VALUES (5,2,30,30,to_date('1982/02/21','YYYY/MM/DD'),to_date('1982/03/01','YYYY/MM/DD'));
---INSERT INTO zlecenie VALUES (5,3,25,50,to_date('1983/04/07','YYYY/MM/DD'),to_date('1983/04/16','YYYY/MM/DD'));
---INSERT INTO zlecenie VALUES (6,3,32,50,to_date('1983/04/15','YYYY/MM/DD'),to_date('1983/04/20','YYYY/MM/DD'));
---INSERT INTO zlecenie VALUES (7,3,78,15,to_date('1983/04/22','YYYY/MM/DD'),to_date('1983/05/23','YYYY/MM/DD'));
---INSERT INTO zlecenie VALUES (5,4,40,30,to_date('1983/04/10','YYYY/MM/DD'),to_date('1983/04/18','YYYY/MM/DD'));
+INSERT INTO task (id_pracownika,nr_projektu,ilosc_godzin,stawka_za_godzine,data_rozpoczecia,data_zakonczenia)
+    VALUES (3,1,10,40,to_date('1981/02/02','YYYY/MM/DD'),to_date('1981/02/12','YYYY/MM/DD'));
+INSERT INTO task (id_pracownika,nr_projektu,ilosc_godzin,stawka_za_godzine,data_rozpoczecia,data_zakonczenia)
+    VALUES (5,1,20,60,to_date('1981/02/20','YYYY/MM/DD'),to_date('1981/03/02','YYYY/MM/DD'));
+INSERT INTO task (id_pracownika,nr_projektu,ilosc_godzin,stawka_za_godzine,data_rozpoczecia,data_zakonczenia)
+    VALUES (11,2,20,50,to_date('1982/02/07','YYYY/MM/DD'),to_date('1982/03/16','YYYY/MM/DD'));
+INSERT INTO task (id_pracownika,nr_projektu,ilosc_godzin,stawka_za_godzine,data_rozpoczecia,data_zakonczenia)
+    VALUES (12,2,30,45,to_date('1982/02/17','YYYY/MM/DD'),to_date('1982/02/20','YYYY/MM/DD'));
+INSERT INTO task (id_pracownika,nr_projektu,ilosc_godzin,stawka_za_godzine,data_rozpoczecia,data_zakonczenia)
+    VALUES (5,2,30,30,to_date('1982/02/21','YYYY/MM/DD'),to_date('1982/03/01','YYYY/MM/DD'));
+INSERT INTO task (id_pracownika,nr_projektu,ilosc_godzin,stawka_za_godzine,data_rozpoczecia,data_zakonczenia)
+    VALUES (5,3,25,50,to_date('1983/04/07','YYYY/MM/DD'),to_date('1983/04/16','YYYY/MM/DD'));
+INSERT INTO task (id_pracownika,nr_projektu,ilosc_godzin,stawka_za_godzine,data_rozpoczecia,data_zakonczenia)
+    VALUES (6,3,32,50,to_date('1983/04/15','YYYY/MM/DD'),to_date('1983/04/20','YYYY/MM/DD'));
+INSERT INTO task (id_pracownika,nr_projektu,ilosc_godzin,stawka_za_godzine,data_rozpoczecia,data_zakonczenia)
+    VALUES (7,3,78,15,to_date('1983/04/22','YYYY/MM/DD'),to_date('1983/05/23','YYYY/MM/DD'));
+INSERT INTO task (id_pracownika,nr_projektu,ilosc_godzin,stawka_za_godzine,data_rozpoczecia,data_zakonczenia)
+    VALUES (5,4,40,30,to_date('1983/04/10','YYYY/MM/DD'),to_date('1983/04/18','YYYY/MM/DD'));

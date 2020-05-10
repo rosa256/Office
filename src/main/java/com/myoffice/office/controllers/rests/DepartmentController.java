@@ -1,4 +1,4 @@
-package com.myoffice.office.controllers;
+package com.myoffice.office.controllers.rests;
 
 import com.myoffice.office.models.Department;
 import com.myoffice.office.services.DepartmentService;
