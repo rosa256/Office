@@ -21,14 +21,14 @@ public class Task implements Serializable {
     private Date data_zakonczenia;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_pracownika")
+    @JoinColumn(name = "idPracownika")
     @JsonBackReference
-    @MapsId("id_pracownika") // Needed for EmbededId
+    @MapsId("idPracownika") // Needed for EmbededId
     private Employee employee;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "nr_projektu")
+    @JoinColumn(name = "nrProjektu")
     @JsonBackReference
-    @MapsId("nr_projektu") // Needed for EmbededId
+    @MapsId("nrProjektu") // Needed for EmbededId
     private Project project;
 }

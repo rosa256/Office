@@ -33,6 +33,25 @@ INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_z
     VALUES (13, 'Nazwisko13','ANALITYK',6,to_date('1981/12/03','YYYY/MM/DD'),2000,NULL,2);
 INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
     VALUES (14, 'Nazwisko14','SPRZEDAWCA',1,to_date('1982/01/23','YYYY/MM/DD'),1000,400,1);
+
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
+    VALUES (15, 'Nazwisko15','SPRZEDAWCA',2,to_date('1982/01/23','YYYY/MM/DD'),1000,400,2);
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
+    VALUES (16, 'Nazwisko16','SPRZEDAWCA',4,to_date('1982/01/23','YYYY/MM/DD'),1000,400,2);
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
+    VALUES (17, 'Nazwisko17','SPRZEDAWCA',4,to_date('1982/01/23','YYYY/MM/DD'),1000,400,2);
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
+    VALUES (18, 'Nazwisko18','SPRZEDAWCA',1,to_date('1982/01/23','YYYY/MM/DD'),1000,400,2);
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
+    VALUES (19, 'Nazwisko19','SPRZEDAWCA',3,to_date('1982/01/23','YYYY/MM/DD'),1000,400,2);
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
+    VALUES (20, 'Nazwisko20','SPRZEDAWCA',5,to_date('1982/01/23','YYYY/MM/DD'),1000,400,2);
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
+    VALUES (21, 'Nazwisko21','SPRZEDAWCA',5,to_date('1982/01/23','YYYY/MM/DD'),1000,400,3);
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
+    VALUES (22, 'Nazwisko22','SPRZEDAWCA',6,to_date('1982/01/23','YYYY/MM/DD'),1000,400,3);
+INSERT INTO employee (id_pracownika, nazwisko, stanowisko, id_kierownika, data_zatrudnienia, pensja, premia, nr_departamentu)
+    VALUES (23, 'Nazwisko23','SPRZEDAWCA',4,to_date('1982/01/23','YYYY/MM/DD'),1000,400,3);
 --
 INSERT INTO Earnings_level (nr_przedzialu, dolna_granica, gorna_granica)
     VALUES (1,700,1200);

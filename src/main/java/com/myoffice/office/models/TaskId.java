@@ -14,20 +14,20 @@ import java.util.Objects;
 @NoArgsConstructor
 public class TaskId implements Serializable {
 
-    private Integer id_pracownika;
-    private Integer nr_projektu;
+    private Integer idPracownika;
+    private Integer nrProjektu;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TaskId taskId = (TaskId) o;
-        return id_pracownika.equals(taskId.id_pracownika) &&
-                nr_projektu.equals(taskId.nr_projektu);
+        return idPracownika.equals(taskId.idPracownika) &&
+                nrProjektu.equals(taskId.nrProjektu);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id_pracownika, nr_projektu);
+        return Objects.hash(idPracownika, nrProjektu);
     }
 }

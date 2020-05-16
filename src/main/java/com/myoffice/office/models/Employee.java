@@ -15,8 +15,8 @@ import java.util.List;
 public class Employee{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id_pracownika;
-    private Integer id_kierownika;
+    private Integer idPracownika;
+    private Integer idKierownika;
     private String nazwisko;
     private String stanowisko;
     private Date data_zatrudnienia;
@@ -24,25 +24,13 @@ public class Employee{
     private Float premia;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "nr_departamentu")
+    @JoinColumn(name = "nrDepartamentu")
     @JsonBackReference
     private Department department;
 
     @OneToMany(mappedBy = "employee")
     @JsonManagedReference
     private List<Task> taskList;
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "id_pracownika=" + id_pracownika +
-                ", nazwisko='" + nazwisko + '\'' +
-                ", stanowisko='" + stanowisko + '\'' +
-                ", data_zatrudnienia=" + data_zatrudnienia +
-                ", pensja=" + pensja +
-                ", premia=" + premia +
-                '}';
-    }
 }
 
 

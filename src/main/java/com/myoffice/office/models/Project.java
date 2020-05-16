@@ -26,15 +26,4 @@ public class Project implements Serializable {
     @JsonManagedReference
     private List<Task> taskList;
 
-    @Override
-    public String toString() {
-        return "Project{" +
-                "nr_projektu=" + nr_projektu +
-                ", nazwa='" + nazwa + '\'' +
-                ", budzet=" + budzet +
-                ", data_rozpoczecia=" + data_rozpoczecia +
-                ", data_zakonczenia=" + data_zakonczenia +
-                ", taskList=" + taskList +
-                '}';
-    }
 }

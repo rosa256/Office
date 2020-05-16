@@ -14,7 +14,7 @@ import java.util.List;
 public class Department{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer nr_departamentu;
+    private Integer nrDepartamentu;
     private String nazwa;
     private String lokalizacja;
 

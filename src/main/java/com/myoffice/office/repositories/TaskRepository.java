@@ -10,5 +10,7 @@ import java.util.List;
 
 public interface TaskRepository extends JpaRepository<Task, TaskId> {
 
-    List<Employee> findAllBy();
+    List<Task> findAllBy();
+
+    List<Task> findAllByTaskIdIdPracownikaIn(List<Integer> employeesIds);
 }
