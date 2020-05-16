@@ -15,7 +15,7 @@ import java.util.List;
 public class Project implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer nr_projektu;
+    private Integer nrProjektu;
 
     private String nazwa;
     private Double budzet;

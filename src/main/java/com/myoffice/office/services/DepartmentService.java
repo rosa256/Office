@@ -10,7 +10,7 @@ import com.myoffice.office.repositories.DepartmentRepository;
 import com.myoffice.office.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -36,14 +36,13 @@ public class DepartmentService {
 
 
     public List<DepartmentDTO> getAllDepartmentsPage(Integer page){
-        List<Department> departmentsPage = departmentRepository.findAllDepartmentsPage(PageRequest.of(page, PAGE_SIZE));
+        List<Department> departmentsPage = departmentRepository.findAllDepartmentsPage(PageRequest.of(page, PAGE_SIZE, Sort.by(Sort.Direction.DESC, "id")));
         return DepartmentDtoMapper.mapToDepartmentDTOs(departmentsPage);
     }
 
     public List<DepartmentDTO> getDepartmentsWithEmployees(int page){
         List<Department> allDepartments = departmentRepository.findAllDepartmentsPage(PageRequest.of(page, PAGE_SIZE));
-        List<Integer> departmentsIds = allDepartments
-                .stream()
+        List<Integer> departmentsIds = allDepartments.stream()
                 .map(department -> department.getNrDepartamentu())
                 .collect(Collectors.toList());
 
