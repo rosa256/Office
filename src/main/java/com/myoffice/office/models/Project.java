@@ -14,7 +14,7 @@ import java.util.List;
 @Setter
 public class Project implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer nrProjektu;
 
     private String nazwa;
@@ -23,7 +23,7 @@ public class Project implements Serializable {
     private Date data_zakonczenia;
 
     @OneToMany(mappedBy = "project")
-    @JsonManagedReference
+    @JsonManagedReference(value = "c_name")
     private List<Task> taskList;
 
 }

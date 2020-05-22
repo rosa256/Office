@@ -12,9 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 
-import javax.persistence.criteria.CriteriaBuilder;
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -58,5 +57,35 @@ public class DepartmentService {
         return employeesDTOList.stream()
                 .filter(employee -> employee.getNr_departamentu() == nr_departamentu)
                 .collect(Collectors.toList());
+    }
+
+    public Department createDepartment(Department department) {
+        return departmentRepository.save(department);
+    }
+
+    @Transactional
+    public Department editDepartment(Department department) {
+        Department editedDepartment = departmentRepository.findById(department.getNrDepartamentu()).get();
+        editedDepartment.setNazwa(department.getNazwa());
+        editedDepartment.setLokalizacja(department.getLokalizacja());
+        return departmentRepository.save(editedDepartment);
+    }
+
+    public List<DepartmentDTO> getAllDepartmentsWithEmployees() {
+            List<Department> allDepartments = departmentRepository.findAllDepartments();
+            List<Integer> departmentsIds = allDepartments.stream()
+                    .map(department -> department.getNrDepartamentu())
+                    .collect(Collectors.toList());
+
+            List<DepartmentDTO> allDepartmentsDTO = DepartmentDtoMapper.mapToDepartmentDTOs(allDepartments);
+            List<Employee> employees = employeeRepository.findAllByDepartmentNrDepartamentuIn(departmentsIds);
+            List<EmployeeDTO> employeeDTOList = EmployeeDTOMapper.mapEmployeesToDTOs(employees);
+
+            allDepartmentsDTO.forEach(department -> department.setEmployeeDTOList(extractEmployees(employeeDTOList, department.getNrDepartamentu())));
+            return allDepartmentsDTO;
+    }
+
+    public void removeDepartmentById(Integer id) {
+        departmentRepository.deleteById(id);
     }
 }

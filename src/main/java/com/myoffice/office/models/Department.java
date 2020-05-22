@@ -13,12 +13,12 @@ import java.util.List;
 @Setter
 public class Department{
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer nrDepartamentu;
     private String nazwa;
     private String lokalizacja;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "department")
-    @JsonManagedReference
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "department", cascade = CascadeType.REMOVE)
+    @JsonManagedReference(value = "b_name")
     private List<Employee> employees;
 }

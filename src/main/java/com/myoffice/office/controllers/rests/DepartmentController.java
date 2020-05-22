@@ -4,9 +4,7 @@ import com.myoffice.office.dto.DepartmentDTO;
 import com.myoffice.office.models.Department;
 import com.myoffice.office.services.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,7 +30,23 @@ public class DepartmentController {
     }
 
     @GetMapping("/departments/employees")
-    public String getAllDepartmentsWithEmployees(){
-        return "Not Implemented";
+    public List<DepartmentDTO> getAllDepartmentsWithEmployees(){
+        return departmentService.getAllDepartmentsWithEmployees();
+    }
+
+
+    @PostMapping(value = "/add/department")
+    public Department addDepartment(@RequestBody Department department){
+        return departmentService.createDepartment(department);
+    }
+
+    @PutMapping("/edit/department")
+    public Department editDepartment(@RequestBody Department department){
+        return departmentService.editDepartment(department);
+    }
+
+    @DeleteMapping("/delete/department/{id}")
+    public void deleteDepartment(@PathVariable(name = "id") Integer id){
+        departmentService.removeDepartmentById(id);
     }
 }

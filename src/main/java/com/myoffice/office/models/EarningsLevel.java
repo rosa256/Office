@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @Setter
 public class EarningsLevel {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer nr_przedzialu;
     private Double gorna_granica;
     private Double dolna_granica;

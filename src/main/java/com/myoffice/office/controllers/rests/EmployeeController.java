@@ -20,10 +20,10 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
-    @GetMapping("/")
-    public String hello(){
-        return "<b>Hello, it works</b>";
-    }
+//    @GetMapping("/")
+//    public String hello(){
+//        return "<b>Hello, it works</b>";
+//    }
 
     @GetMapping("/employees")
     public List<EmployeeDTO> getEmployees(){

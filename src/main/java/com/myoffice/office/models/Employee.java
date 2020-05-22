@@ -14,7 +14,7 @@ import java.util.List;
 @Setter
 public class Employee{
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idPracownika;
     private Integer idKierownika;
     private String nazwisko;
@@ -24,12 +24,12 @@ public class Employee{
     private Float premia;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "nrDepartamentu")
-    @JsonBackReference
+    @JoinColumn(name = "nrDepartamentu", updatable = false, insertable = false)
+    @JsonBackReference(value = "b_name")
     private Department department;
 
     @OneToMany(mappedBy = "employee")
-    @JsonManagedReference
+    @JsonManagedReference(value = "a_name")
     private List<Task> taskList;
 }
 

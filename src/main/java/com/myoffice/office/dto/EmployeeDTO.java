@@ -21,7 +21,6 @@ public class EmployeeDTO {
     private Date data_zatrudnienia;
     private Float pensja;
     private Float premia;
-    @JsonIgnore
     private Integer nr_departamentu;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private List<TaskDTO> taskList;
