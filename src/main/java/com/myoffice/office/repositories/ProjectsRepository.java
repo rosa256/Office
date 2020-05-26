@@ -14,7 +14,7 @@ public interface ProjectsRepository extends JpaRepository<Project, Integer> {
 
     @Query("select p From Project p left outer join fetch p.taskList")
     List<Project> findAllProjects();
-    @Query("select p From Project p left outer join fetch p.taskList")
+    @Query("select p From Project p")
     List<Project> findAllProjects(Pageable page);
 
     //List<Project> findAllByNrProjektuIn(List<Integer> projectsIds);
